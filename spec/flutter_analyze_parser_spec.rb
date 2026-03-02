@@ -45,6 +45,19 @@ RSpec.describe FlutterAnalyzeParser do
           expect(violations.first).to eq(expected)
         end
       end
+      
+      describe "4th item" do
+        it "should have correct fields" do
+          expected = FlutterViolation.new(
+            "unnecessary_non_null_assertion",
+            "Avoid using unnecessary non-null assertions",
+            "lib/main.dart",
+            30
+          )
+
+          expect(violations[3]).to eq(expected)
+        end
+      end
 
       describe "last item" do
         it "should have correct fields" do
